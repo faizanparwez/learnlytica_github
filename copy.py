@@ -2,8 +2,8 @@ import shutil
 import os
 
 # Enter source and destination folder paths
-source_folder = r"C:\Users\YourName\Desktop\Source"
-destination_folder = r"C:\Users\YourName\Desktop\Destination"
+source_folder = r"/home/coder/workspace/github"
+destination_folder = r"/home/coder/workspace"
 
 # Check if source folder exists
 if os.path.exists(source_folder):
@@ -13,6 +13,9 @@ if os.path.exists(source_folder):
 
     # Transfer all folders and their contents
     for folder in os.listdir(source_folder):
+
+        if folder == ".git":
+            continue
 
         source_path = os.path.join(source_folder, folder)
         destination_path = os.path.join(destination_folder, folder)
